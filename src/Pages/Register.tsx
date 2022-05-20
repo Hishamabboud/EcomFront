@@ -10,7 +10,7 @@ const Register = () => {
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
-     const response = await fetch("https://localhost:44306/api/user", {
+     const response = await fetch("https://localhost:7019/api/user", {
          method: "POST",
          headers: {'Content-Type': "application/json"},
          mode: "cors",

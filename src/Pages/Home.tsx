@@ -6,16 +6,15 @@ const Home = () => {
         <div className= "hero">
             <div className="card bg-dark text-white">
                 <img src="images/img-home.jpg" className="card-img" alt="Background" height = "550px"/>
-                <div className = "Container">
-
                     <div className="card-img-overlay">
-                        <h5 className="card-title">Jewelery Collection</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                        <div className = "Container">
+                        <h5 className="card-title" display-3 >Pearls</h5>
+                        <p className="card-text font-size = h-50">
                         </p>
                     </div>
                     </div>
             </div>
+            <Products/>
         </div>
     );
 };

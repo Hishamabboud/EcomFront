@@ -8,6 +8,7 @@ const Login = () => {
     const [refreshtoken, setRefreshtoken] = useState('');
     const [navigate, SetNavigate] = useState(false);
     const [authenticated, Setauthenticated] = useState(false);
+    const [notauthenticated, Setnotauthenticated] = useState(true);
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -28,6 +29,10 @@ const Login = () => {
 
         const contentL = await responseL.json();
         Setauthenticated(contentL.authenticated);
+        if(contentL.authenticated == false)
+        {
+            alert("Wrong Email or Password")
+        }
         SetNavigate(true);
 
     }
