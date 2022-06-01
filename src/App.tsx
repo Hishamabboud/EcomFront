@@ -11,6 +11,7 @@ import Register from './Pages/Register';
 import Home from './Pages/Home';
 import Products from './Components/Products';
 import Product from './Components/Product';
+import Cart from './Components/Cart';
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
             <Route path = "/products" element={<Products/> }/>
             <Route path = '/login' element={<Login />} />
             <Route path = '/register' element={<Register />} />
-
+            <Route path = '/products/:id' element={<Product />} />
+            <Route path = '/cart' element={<Cart />} />
         </Routes>
         <main/>
     </BrowserRouter>

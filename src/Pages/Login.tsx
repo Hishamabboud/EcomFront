@@ -13,7 +13,7 @@ const Login = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        const responseL = await fetch("https://localhost:44306/api/Auth", {
+        const responseL = await fetch("https://localhost:7019/api/Auth", {
             method: "POST",
             headers: {'Content-Type': "application/json"},
             credentials: 'include',

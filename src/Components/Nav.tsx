@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom";
+import{useSelector} from "react-redux";
 
 
 const Nav = () => {
+    const state = useSelector((state: any) => state.handleCart);
+    console.log(state)
     return (
         <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
@@ -34,6 +37,11 @@ const Nav = () => {
                        <NavLink to = "/login" className="btn btn-outline-dark ms-2">
                            <i className="fa-sign-in"></i>Login</NavLink>
                    </div>
+                    <div className = "buttons">
+                        <NavLink to = "/cart" className="btn btn-outline-dark ms-2">
+                               Cart</NavLink>
+                            <div/>
+                    </div>
                 </div>
             </div>
         </nav>

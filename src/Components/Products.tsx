@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Skeleton from 'react-loading-skeleton'
+import {NavLink} from "react-router-dom";
 
 
 
@@ -13,7 +14,7 @@ const Products = () => {
     useEffect(() => {
         const getProducts = async () => {
             setLoading(true);
-            const response = await fetch("https://localhost:44306/api/product", {
+            const response = await fetch("https://localhost:7019/api/product", {
                 method: "Get",
                 headers: {'Content-Type': "application/json"},
                 credentials: 'include',
@@ -28,7 +29,7 @@ const Products = () => {
             }
 
             return () => {
-                componentMounted = true;
+                componentMounted = false;
             }
         }
         getProducts();
@@ -44,13 +45,12 @@ const Products = () => {
         )
     }
 
+
     const ShowProducts = () => {
         return (
             <>
                 <div className="buttons d-flex justify-content-center mb-5 pb-5">
-                    <button className="btn btn-outline-dark">All
-                    </button>
-                    <button className="btn btn-outline-dark">Pearl
+                    <button className="btn btn-outline-dark me-2" onClick={(() => setFilter(data))}>All
                     </button>
                 </div>
                 {filter.map((product: any) => {
@@ -60,9 +60,9 @@ const Products = () => {
                                 <div className="card h-100 text-center p-4 " key = {product.id}>
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIoRaByLV2y9PASZdOmK3sKQ3z9BBu_mkWd0Vm7-W3ag&s" className="card-img-top" height = "250px"/>
                                     <div className="card-body">
-                                        <h5 className="card-title mb-0">{product.name.substring(0,12)}...</h5>
+                                        <h5 className="card-title mb-0">{product.name.substring(0,15)}</h5>
                                         <p className="card-te xt">${product.price}</p>
-                                        <a href="#" className="btn btn-primary">Add to cart</a>
+                                        <NavLink to = {'/products/' + product.id} className="btn btn-outline-dark">Buy Now</NavLink>
                                     </div>
                                 </div>
                             </div>
