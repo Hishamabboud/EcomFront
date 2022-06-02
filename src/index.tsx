@@ -5,13 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
+import store from './Redux/store';
+
 
 const root = ReactDOM.createRoot(
+
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+    <React.StrictMode>
+    <Provider store={store}>
     <App />
+    </Provider>
   </React.StrictMode>,
 );
 

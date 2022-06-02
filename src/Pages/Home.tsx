@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Products from '../Components/Products';
+import Feed from "react-instagram-embed";
+import { LinkedInEmbed } from 'react-social-media-embed';
+import { TikTokEmbed } from 'react-social-media-embed';
+import { InstagramEmbed } from 'react-social-media-embed';
+import { FacebookEmbed } from 'react-social-media-embed';
+
+
 
 const Home = () => {
     return (
         <div className= "hero">
-            <div className="card bg-dark text-white">
-                <img src="images/img-home.jpg" className="card-img" alt="Background" height = "550px"/>
-                <div className = "Container">
-
-                    <div className="card-img-overlay">
-                        <h5 className="card-title">Jewelery Collection</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </p>
-                    </div>
-                    </div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <TikTokEmbed url="https://www.tiktok.com/@epicgardening/video/7055411162212633903" width={325} />
             </div>
+
+
         </div>
+
     );
 };
-
 
 export default Home;
