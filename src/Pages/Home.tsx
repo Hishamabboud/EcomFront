@@ -3,7 +3,6 @@ import Products from '../Components/Products';
 import Feed from "react-instagram-embed";
 import { LinkedInEmbed } from 'react-social-media-embed';
 import { TikTokEmbed } from 'react-social-media-embed';
-import { InstagramEmbed } from 'react-social-media-embed';
 import { FacebookEmbed } from 'react-social-media-embed';
 
 
